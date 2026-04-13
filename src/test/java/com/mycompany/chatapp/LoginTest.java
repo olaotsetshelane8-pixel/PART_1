@@ -4,13 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Unit tests for the login class.
- *
- * Test data sourced from the POE Part 1 requirements document (IIE, 2026).
- * All assertEquals test data matches the exact strings specified in the
- * marking rubric table.
- */
+
 public class LoginTest {
 
     private login testLogin;
@@ -26,7 +20,7 @@ public class LoginTest {
 
     // ── checkUserName() ───────────────────────────────────────────────────────
 
-    /** Username contains '_' and is ≤ 5 characters → must return true. */
+    /** Username contains '_' and is ≤ 5 characters , must return true. */
     @Test
     public void testCheckUserName_ValidUsername_ReturnsTrue() {
         testLogin.setUserName("kyl_1");
@@ -34,7 +28,7 @@ public class LoginTest {
             "Username 'kyl_1' contains '_' and is 5 chars — should be valid.");
     }
 
-    /** Username has no underscore → must return false. */
+    /** Username has no underscore , must return false. */
     @Test
     public void testCheckUserName_NoUnderscore_ReturnsFalse() {
         testLogin.setUserName("kyle1");
@@ -42,7 +36,7 @@ public class LoginTest {
             "Username 'kyle1' has no '_' — should be invalid.");
     }
 
-    /** Username is longer than 5 characters → must return false. */
+    /** Username is longer than 5 characters , must return false. */
     @Test
     public void testCheckUserName_TooLong_ReturnsFalse() {
         testLogin.setUserName("kyle_longer");
@@ -246,7 +240,7 @@ public class LoginTest {
             "Successful login should return the welcome message.");
     }
 
-    /** Wrong credentials → error message. */
+    // Wrong credentials → error message
     @Test
     public void testReturnLoginStatus_WrongCredentials_ReturnsError() {
         testLogin.setFirstname("John");
